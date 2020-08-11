@@ -79,7 +79,7 @@ Thanks to the Open Source environment and platforms of Arduino and Raspberry Pi 
 <p align="center">
  <img src="photos/Imagen_CV.jpeg" width="400" height="400">
 </p>
-Industrial engineering student at Carlos III University. Passion for technology, especially electronics, programming and the world of IoT!. See my CV in the following link: [CV ](https://github.com/albertito1998/semillero/blob/master/public/img/photos/Alberto%20G%C3%B3mez%20Zueco.pdf)
+Industrial engineering student at Carlos III University. Passion for technology, especially electronics, programming and the world of IoT!. See my CV in the following link: [CV ](https://github.com/albertito1998/SeedbedAndroidApp/blob/master/photos/Alberto%20G%C3%B3mez%20Zueco.pdf)
 
 ## Support
 
