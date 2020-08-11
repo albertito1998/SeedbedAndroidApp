@@ -13,7 +13,7 @@
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)  [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) 
 ## Description
 <p align="center">
- <img src="public/img/brandlogo.jpeg" width="100" height="100" >
+ <img src="photos/brandlogo.jpeg" width="100" height="100" >
 </p>
 
 This project includes the entire process followed for the design and construction of a prototype seedbed with environmental control for the cultivation of horticultural species during its early stages of development.
@@ -23,7 +23,7 @@ The creation of the prototype, the different necessary electronic components, th
 The project has been carried out in a self-taught way thanks to the material provided by the Library of the Carlos III University of Madrid and consultations made with professors and acquaintances who carry out their professional work in the agriculture sector, under the supervision of my tutor from the TFG.
 
 <p align="center">
- <img src="public/img/photos/description.jpg" >
+ <img src="photos/description.jpg" >
 </p>
  [See The complete bachelor thesis:](-------)
 
@@ -58,16 +58,16 @@ Thanks to the Open Source environment and platforms of Arduino and Raspberry Pi 
 
 ## Android
 <p align="center">
- <img src="public/img/photos/android1.JPG"  >
+ <img src="photos/android1.JPG"  >
 </p>
 <p align="center">
- <img src="public/img/photos/android2.jpg" >
+ <img src="photos/android2.jpg" >
 </p>
 <p align="center">
- <img src="public/img/photos/android3.JPG"  >
+ <img src="photos/android3.JPG"  >
 </p>
 <p align="center">
- <img src="public/img/photos/android4.jpeg" >
+ <img src="photos/android4.jpeg" >
 </p>
 
 ## Clone
@@ -77,7 +77,7 @@ Thanks to the Open Source environment and platforms of Arduino and Raspberry Pi 
 ## About 
 
 <p align="center">
- <img src="public/img/photos/Imagen_CV.jpeg" width="400" height="400">
+ <img src="photos/Imagen_CV.jpeg" width="400" height="400">
 </p>
 Industrial engineering student at Carlos III University. Passion for technology, especially electronics, programming and the world of IoT!. See my CV in the following link: [CV ](https://github.com/albertito1998/semillero/blob/master/public/img/photos/Alberto%20G%C3%B3mez%20Zueco.pdf)
 
