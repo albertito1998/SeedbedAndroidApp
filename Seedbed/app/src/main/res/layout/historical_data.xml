@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Historical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/viewDivider"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/startPickDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/button_rounded"
+            android:text="@string/startDate"
+            app:iconTint="@color/colorWhite"
+            app:icon="@drawable/baseline_date_range_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/startDateDisplay"
+            />
+
+        <TextView
+            android:id="@+id/startDateDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/endPickDate"
+            app:layout_constraintTop_toBottomOf="@id/startPickDate" />
+
+        <Button
+            android:id="@+id/endPickDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/button_rounded"
+            android:text="@string/endPoint"
+            app:icon="@drawable/baseline_date_range_black_24dp"
+            app:iconTint="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/startDateDisplay"
+            app:layout_constraintBottom_toTopOf="@id/endDateDisplay"
+            />
+        <TextView
+            android:id="@+id/endDateDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textStyle="italic"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/SHOW"
+            app:layout_constraintTop_toBottomOf="@id/endPickDate"
+            />
+
+        <Button
+            android:id="@+id/SHOW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_values"
+            android:background="@drawable/button_rounded"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/table"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/endDateDisplay"
+            />
+
+        <!-- HUMIDITY GROUND -->
+
+        <TextView
+            android:id="@+id/Title_Humidity_ground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/bottomNavTransparent"
+            android:padding="24dp"
+            android:text="@string/HumidityGround"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/SHOW"
+            app:layout_constraintTop_toBottomOf="@id/HumidityGroundTable" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/HumidityGroundTable"
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bottomNavTransparent">
+                <TextView
+                    android:id="@+id/MaxHumidityGround"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/maxMoisture"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageHumidityGround"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/averageMoisture"
+                    />
+
+                <TextView
+                    android:id="@+id/DayMaxHumidityGround"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/DayMaxHumidityGround"
+                    />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+
+                <TextView
+                    android:id="@+id/MaxHumidityGroundValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageHumidityGroundValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/DayMaxHumidityGroundValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+            </TableRow>
+        </TableLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/layoutHumidityGroundLineChart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintStart_toStartOf="@id/HumidityGroundTable"
+        app:layout_constraintBottom_toTopOf="@id/Title_Temperature">
+
+    </com.github.mikephil.charting.charts.LineChart>
+
+
+        <!-- TEMPERATURE -->
+
+        <TextView
+            android:id="@+id/Title_Temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/bottomNavTransparent"
+            android:padding="24dp"
+            android:text="@string/temperature"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/TemperatureTable"
+            app:layout_constraintTop_toBottomOf="@id/layoutHumidityGroundLineChart" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/TemperatureTable"
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bottomNavTransparent">
+                <TextView
+                    android:id="@+id/MaxTemperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/maxTemperature"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageTemperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/averageTemperature"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/DayTemperatureGround"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/DayMaxTemperature"
+                    />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+
+                <TextView
+                    android:id="@+id/MaxTemperatureValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageTemperatureValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/DayMaxTemperatureValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+            </TableRow>
+        </TableLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/layoutTemperatureLineChart"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintStart_toStartOf="@id/TemperatureTable"
+            app:layout_constraintBottom_toTopOf="@id/Title_LDR">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+
+        <!-- HUMIDITY AIR-->
+
+        <TextView
+            android:id="@+id/Title_HumidityAir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/bottomNavTransparent"
+            android:padding="24dp"
+            android:text="@string/humidityair"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/HumidityAirTable"
+            app:layout_constraintTop_toBottomOf="@id/layoutTemperatureLineChart" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/HumidityAirTable"
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bottomNavTransparent">
+                <TextView
+                    android:id="@+id/MaxHumidityAir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/maxMoisture"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageHumidityAir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/averageMoisture"
+                    />
+
+                <TextView
+                    android:id="@+id/DayHumidityAir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/DayMaxHumidityGround"
+                    />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+
+                <TextView
+                    android:id="@+id/MaxHumidityAirValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageHumidityAirValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/DayMaxHumidityAirValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+            </TableRow>
+        </TableLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/layoutHumidityAirLineChart"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintStart_toStartOf="@id/HumidityAirTable"
+            app:layout_constraintBottom_toTopOf="@id/Title_LDR">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+        <!-- LDR -->
+
+        <TextView
+            android:id="@+id/Title_LDR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/bottomNavTransparent"
+            android:padding="24dp"
+            android:text="@string/LDR"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/LDRTable"
+            app:layout_constraintTop_toBottomOf="@id/layoutHumidityAirLineChart" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/LDRTable"
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bottomNavTransparent">
+                <TextView
+                    android:id="@+id/MaxLDR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/maxLDR"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageLDR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/averageLDR"
+                    />
+
+                <TextView
+                    android:id="@+id/DayLDR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/DayMaxLDR"
+                    />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+
+                <TextView
+                    android:id="@+id/MaxLDRValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageLDRValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/DayMaxLDRValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+            </TableRow>
+        </TableLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/layoutLDRLineChart"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintStart_toStartOf="@id/LDRTable"
+            app:layout_constraintBottom_toTopOf="@id/Title_CO2">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+        <!-- CO2 -->
+
+        <TextView
+            android:id="@+id/Title_CO2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/bottomNavTransparent"
+            android:padding="24dp"
+            android:text="@string/Co2"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/CO2Table"
+            app:layout_constraintTop_toBottomOf="@id/layoutLDRLineChart" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/CO2Table"
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bottomNavTransparent">
+                <TextView
+                    android:id="@+id/MaxCO2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/maxCO2"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageCO2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/averageCO2"
+                    />
+
+                <TextView
+                    android:id="@+id/DayCO2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/DayMaxCO2"
+                    />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+
+                <TextView
+                    android:id="@+id/MaxCO2Value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/AverageCO2Value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+                <TextView
+                    android:id="@+id/DayMaxCO2Value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:text="@string/points"
+                    />
+
+            </TableRow>
+        </TableLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/layoutCO2LineChart"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:paddingBottom="20dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintStart_toStartOf="@id/CO2Table"
+            app:layout_constraintBottom_toTopOf="parent">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@color/colorBlack"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/nav_items" />
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBlack"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

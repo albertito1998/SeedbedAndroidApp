@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "498001366892",
+    "firebase_url": "https://semillero-35a36.firebaseio.com",
+    "project_id": "semillero-35a36",
+    "storage_bucket": "semillero-35a36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498001366892:android:c2ea7196bdd54ad503ad49",
+        "android_client_info": {
+          "package_name": "firebase.app.semillero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498001366892-9c2eepvejbpquldudolu1cs0cdvthtsc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "firebase.app.semillero",
+            "certificate_hash": "72de7aba441b05b927cf0ab02cd95173cc1fc443"
+          }
+        },
+        {
+          "client_id": "498001366892-319fs4uikcgjgmrqa748juu7eg30v3bu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCATJ64SlhcMLTtFA6d-smHh8ztwG_TVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498001366892-319fs4uikcgjgmrqa748juu7eg30v3bu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

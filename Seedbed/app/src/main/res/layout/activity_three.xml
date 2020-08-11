@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondopantallausuario"
+    tools:context=".ActivityThree">
+
+
+
+    <ImageView
+        android:id="@+id/ProfileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/profile_icon"
+        app:layout_constraintBottom_toTopOf="@id/Title_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/userprofile" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/ProfileImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/Title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_layout_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ContentLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/name"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ContentLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <EditText
+            android:id="@+id/editTextDisplayName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:autofillHints=""
+            android:hint="@string/EnterDisplayName"
+            android:inputType="text"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack" />
+
+
+        <TextView
+            android:id="@+id/textViewVerified"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:text="@string/Verified"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/typecrop"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDisplayName" />
+
+
+        <TextView
+            android:id="@+id/title_crops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@string/selectCrop"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorBlack"
+            app:layout_constraintBottom_toTopOf="@+id/typecrop"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVerified" />
+
+        <RadioGroup
+            android:id="@+id/typecrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alwaysDrawnWithCache="true"
+            android:animateLayoutChanges="false"
+            android:checkedButton="@+id/pepper"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            app:layout_constraintTop_toBottomOf="@+id/title_crops">
+
+            <RadioButton
+                android:id="@+id/pepper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pepper"
+                android:textColor="@color/colorBlack"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/cucumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cucumber"
+                android:textColor="@color/colorBlack"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/aubergine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/aubergine"
+                android:textColor="@color/colorBlack"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/Tomato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Tomato"
+                android:textColor="@color/colorBlack"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/button_rounded"
+            android:paddingLeft="55dp"
+            android:paddingRight="55dp"
+            android:text="@string/save"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@color/colorBlack"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/nav_items" />
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBlack"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
